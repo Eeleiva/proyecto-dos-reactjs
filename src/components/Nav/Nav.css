@@ -1,0 +1,30 @@
+.nav-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-list li {
+    display: inline;
+}   
+
+.nav-list a {
+    text-decoration: none;
+    color:red;
+    font-weight: bold;
+}
+
+.incart {
+    color: green;
+    font-size: 2rem ;
+    width: 20px;
+  height: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  font-size: 12px;
+  font-weight: bold;
+}

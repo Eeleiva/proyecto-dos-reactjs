@@ -1,0 +1,52 @@
+[ 
+    {
+
+    
+
+"id": 1,
+"name":"juego de mates rojo",
+"description": "Es un juego de mates completos en tono rojo con detalles",
+"price": 2500,
+"image": "/img/mate-rojo.jpg"    
+
+    },
+
+     {
+
+    
+
+"id": 2,
+"name":"juego de mates rosa",
+"description": "Es un juego de mates completos en tono rosa con detalles",
+"price": 2500,
+"image": "/img/mate-rosa.jpg"    
+
+    },
+
+
+    
+    {
+
+    
+
+"id": 3,
+"name":"juego de mates verde",
+"description": "Es un juego de mates completos en tono verde con detalles",
+"price": 2500,
+"image": "/img/mate-verde.jpg"    
+
+    }, 
+    {
+
+    
+
+"id": 4,
+"name":"juego de mates violeta",
+"description": "Es un juego de mates completos en tono violeta con detalles",
+"price": 2500,
+"image": "/img/mate-violeta.jpg"    
+
+    }
+
+]
+
