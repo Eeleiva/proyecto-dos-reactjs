@@ -26,10 +26,10 @@ description: "",
 });
 
 
-const handleChange = (e) => {
-    const { name, value } = e.target;
-    setProduct({...product, [name]: value });
-};
+    const handleChange =(e) => {
+        const { name, value } = e.target;
+        setProduct({ ...product, [name]: value });
+    };
 
 const handleFileChange = (e) => {
 const file = e.target.files[0] || null;
@@ -63,9 +63,10 @@ const id= await createProduct(productData);
 setProduct ({ name: "", price: "", category: "", description: ""});
 setFile(null);
 navigate(`/success/${id}`, {replace: true});
-} catch (error) {
-    setErrors({ general: "Error al crear el producto. Inténtalo de nuevo." });
-}finally {
+} catch (error) { 
+
+setErrors({ general: error.message  });
+} finally {
     setLoading(false);
 }
 
@@ -76,7 +77,7 @@ return (
 product={product}
 errors={errors}
 loading={loading}
-file={file}
+onChange={handleChange}
 onFileChange={handleFileChange}
 onSubmit={handleSubmit}
 />
