@@ -1,0 +1,32 @@
+import { useCart } from "../../context/CartContext";
+import { CartList } from "./CartList";
+import { CartSummary } from "./CartSummary";
+import {Link} from "react-router-dom";
+import "./Cart.css";
+
+
+export const CartView = () => {
+    const {cart} = useCart();
+
+    return (  
+    
+    <section className="cart-container">
+        <h1> Tu Carrito de Compras <i class="fa-solid fa-bag-shopping"></i></h1>
+       
+        {cart.length ? (
+            <>
+        <CartList />
+        <CartSummary />
+        </> 
+        ) : ( 
+            <>  
+            
+        <p className="empty-cart">Tu carrito está vacío <i class="fa-brands fa-creative-commons-zero"></i></p>
+        <Link to= {"/"} className= "btn btn-primary">Volver al catálogo</Link>
+        
+        </>
+    )
+        }
+        </section>
+        );
+    };

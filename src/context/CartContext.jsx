@@ -1,6 +1,7 @@
  import { createContext, useContext, useState} from "react";
  import { useNavigate } from "react-router-dom";
 
+
 const CartContext = createContext(); 
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -36,26 +37,26 @@ export const CartProvider = ({ children }) => {
               };
 
 
-              //eliminar
+              
         const removeItem = (id) => {
             const updatedCart = cart.filter((element) => element.id !== id);
             setCart(updatedCart);
             alert("producto eliminado del carrito  ✔");
         };
 
-              //cantidad
+              
 const getTotalItems = () => {
             return cart.length;
         };
 
-              //total
+              
 
               const getCartTotal = () => {
 return cart.reduce((acc, element) => acc + element.price, 0); 
               };       
         
 
-//vaciar
+
         const clearCart = () => {
         setCart([]);
         };
