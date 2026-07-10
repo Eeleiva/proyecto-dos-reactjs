@@ -4,13 +4,13 @@ import './App.css';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { CartView } from './components/Cart/CartView';
-import { ProductSuccess } from "./components/adminComponents/ProductSuccess";
+import { ProductSuccess } from "./components/adminComponent/ProductSuccess";
 import { PublicLayout } from "./layouts/PublicLayout";
 import { AdminLayout } from "./layouts/AdminLayout";
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
-import { Dashboard } from "./components/adminComponents/Dashboard/Dashboard";
+import { Dashboard } from "./components/adminComponent/Dashboard/Dashboard";
 import { Login } from "./components/Login/Login";
-import { ProductFormContainer } from "./components/adminComponents/ProductFormContainer/ProductFormContainer";
+import { ProductFormContainer } from "./components/adminComponent/ProductFormContainer/ProductFormContainer";
 
 
 
