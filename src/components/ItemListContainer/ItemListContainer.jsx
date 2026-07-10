@@ -3,12 +3,13 @@ import {useState} from "react";
 import { useEffect } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import {useParams} from "react-router-dom";
-import { getByCategory} from "../../services/productsService";
+import { getByCategory } from "../../services/productsService";
 
 export  const ItemListContainer = () => {
 
 
       const {category} = useParams();
+
       const [products, setProducts] = useState([]);
       const [loading, setLoading] = useState(true); 
 
@@ -30,5 +31,5 @@ return (
     <section>
         <ItemList products={products} />
     </section>
-)
+);
     };
