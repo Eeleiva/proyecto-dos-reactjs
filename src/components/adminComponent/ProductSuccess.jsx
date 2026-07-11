@@ -2,8 +2,15 @@ import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 export const ProductSuccess = () => {
-  const { id } = useParams();
+  
+  const {id} = useParams();
 
+  useEffect(() => {
+document.title = "Producto cargado con exito";
+
+  }, []);
+
+  
   return (
     <section className="success-page">
       <div className="success-icon">✅</div>
