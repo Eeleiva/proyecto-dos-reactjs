@@ -8,7 +8,7 @@ import { ProductSuccess } from "./components/adminComponent/ProductSuccess";
 import { PublicLayout } from "./layouts/PublicLayout";
 import { AdminLayout } from "./layouts/AdminLayout";
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
-import { Dashboard } from "./components/adminComponent/Dashboard";
+import { Dashboard } from "./components/adminComponent/Dashboard/Dashboard";
 import { Login } from "./components/Login/Login";
 import { ProductFormContainer } from "./components/adminComponent/ProductFormContainer";
 
