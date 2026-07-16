@@ -3,22 +3,22 @@ import {useState} from "react";
 import { useEffect } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import {useParams} from "react-router-dom";
-import { getByCategory, getProducts } from "../../services/productsService";
+
 
 export  const ItemListContainer = () => {
 
 
       const {category} = useParams();
-
       const [products, setProducts] = useState([]);
       const [loading, setLoading] = useState(true); 
 
-useEffect(() => {
+    useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
 
-    getByCategory(category)
 
+fetch("/data/products.json")
+.then((res) => res.json)
 .then((data) => setProducts(data))
 .catch((error) => console.log("hay un error:", error))
 .finally(() =>  setLoading(false));
