@@ -16,10 +16,10 @@ export const useCart =() => {
 
 export const CartProvider = ({ children }) => {
     const navigate = useNavigate(); 
+    const [cart, setCart] = useState([]);
 
-        const [cart, setCart] = useState([]);
-
-        const isInCart = (item) => {
+        
+    const isInCart = (item) => {
             const inCart = cart.some((element) => element.id === item.id);  
             return inCart;
         };

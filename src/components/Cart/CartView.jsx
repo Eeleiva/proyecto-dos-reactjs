@@ -22,7 +22,9 @@ export const CartView = () => {
             <>  
             
         <p className="empty-cart">Tu carrito está vacío <i class="fa-brands fa-creative-commons-zero"></i></p>
-        <Link to= {"/"} className= "btn btn-primary">Volver al catálogo</Link>
+        <Link className= "btn btn-primary" to={"/"}>
+          Volver al catálogo
+        </Link>
         
         </>
     )

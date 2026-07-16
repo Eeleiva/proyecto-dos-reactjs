@@ -29,6 +29,7 @@ function App() {
       </Route>
 
       <Route path="/admin/login" element={<Login />} />
+      
       <Route path="/admin"
       element={
         <ProtectedRoute>
@@ -38,6 +39,7 @@ function App() {
       >
         <Route index element={<Navigate to={"dashboard"} />} />
         <Route path="dashboard" element={<Dashboard />} />
+        
         <Route path="products/new" element={<ProductFormContainer />} />
         <Route path="products/success/:id" element={<ProductSuccess />} />
       </Route>

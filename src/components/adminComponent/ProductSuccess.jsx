@@ -5,11 +5,7 @@ export const ProductSuccess = () => {
   
   const {id} = useParams();
 
-  useEffect(() => {
-document.title = "Producto cargado con exito";
-
-  }, []);
-
+  
   
   return (
     <section className="success-page">

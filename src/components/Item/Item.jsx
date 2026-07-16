@@ -3,7 +3,7 @@ import "./Item.css";
 
 
 
-export const Item = ({ name,description, price, image, children }) => {
+export const Item = ({ name, description, price, image, children }) => {
     return (
         <article className="card">
             {/* <img src={image} alt={name} className="card-image" /> */}

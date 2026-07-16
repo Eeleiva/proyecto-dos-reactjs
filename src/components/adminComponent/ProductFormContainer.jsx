@@ -15,8 +15,7 @@ export const ProductFormContainer = () => {
     const [loading, setLoading] = useState(false);
     const [errors,setErrors] = useState({});
     const [file, setFile] = useState(null);
-
-const[product, setProduct] = useState({
+    const[product, setProduct] = useState({
 
 name: "",
 price: "",
@@ -41,7 +40,7 @@ e.preventDefault();
 setErrors({});
 setLoading(true);
 
-const newErrors = validateProduct({ ...product, file});
+const newErrors = validateProduct({ ...product, file });
 
 if (Object.keys(newErrors).length > 0) {
     setErrors(newErrors);

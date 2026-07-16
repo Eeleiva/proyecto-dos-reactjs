@@ -3,7 +3,7 @@ import {useState} from "react";
 import { useEffect } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import {useParams} from "react-router-dom";
-import { getByCategory } from "../../services/productsService";
+import { getByCategory, getProducts } from "../../services/productsService";
 
 export  const ItemListContainer = () => {
 
@@ -21,8 +21,8 @@ useEffect(() => {
 
 .then((data) => setProducts(data))
 .catch((error) => console.log("hay un error:", error))
-.finally(() => { setLoading(false);
-     });
+.finally(() =>  setLoading(false));
+     
 }, [category]);
 
 if (loading) return <p>Cargando...</p>;

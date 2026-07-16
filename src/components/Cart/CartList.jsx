@@ -8,7 +8,7 @@ return (
 
     <>
 
-<div className = "cart- items-container">
+<div className = "cart-items-container">
     {cart.map((element) => (
         <CartItem key={element.id} item={element} />
     ))}

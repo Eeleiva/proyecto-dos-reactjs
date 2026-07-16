@@ -40,7 +40,8 @@ export const getProductById = async (id) => {
 
    
     if (snapshot.exists()) {
-      const product = { id: snapshot.id, ...snapshot.data() };
+      const product = { id: snapshot.id, ...snapshot.data() }; 
+      console.log("Doc:" , product);
       
       return product;
     } else {

@@ -4,13 +4,9 @@ import { useAuth } from "../../../context/AuthContext";
 
 export const Dashboard = () => {
   const { logout } = useAuth();
-  const navigate = useNavigate();
-  navigate("/");
-
- 
   
-
-     return (
+  
+   return (
     <div className="dashboard">
       <header className="dashboard-header">
         <h2>Panel de administración</h2>
