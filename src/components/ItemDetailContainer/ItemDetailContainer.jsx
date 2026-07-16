@@ -1,7 +1,7 @@
 import {useParams} from 'react-router-dom';
 import {useState, useEffect} from "react";
 import { ItemDetail } from '../ItemDetail/ItemDetail';
-
+import { getProductById } from '../../services/firebase/firestore/products';
 
 export const ItemDetailContainer = () => {
 
@@ -11,36 +11,22 @@ export const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-       fetch("/data/products.json")
-.then((res) => res.json())
-.then((data) => {
-    const product = data.find((prod) => String(prod.id) === id);
+        getProductById(id)
+       .then((data) => setItemDetail(data))
+       .catch((error) => console.log("hay un error:", error))
+       .finally(() => setLoading(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
-
-    if (product) {
-        setItemDetail(product);
-return;
-   }
-        
-    throw new Error("Producto no encontrado");
-})
-
-.catch((error) => console.log(error))
-.finally(() => setLoading(false));
-    },[id]);
-
-  
-if (loading) return <p>Cargando producto...</p>;
-if (!itemDetail) return <p>Producto no encontrado </p>;
-    
-
- return (
+   if (loading) return <p> Cargando....</p>;
+   if (!itemDetail) return <p>Producto no encontrado</p>;
+   
+   return (
     <section>
-        <h1>Detalles del  producto</h1>
-        <div className="products-container">
+        <h1>Detalles del producto</h1>
+        <div className = "products-container">
             <ItemDetail item={itemDetail} />
         </div>
     </section>
-        
-    );
+   );
 };

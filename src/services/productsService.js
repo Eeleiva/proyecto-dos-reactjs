@@ -49,9 +49,11 @@ export const getProductById = async (id) => {
     }
   } catch (error) {
     console.error("Error al traer producto por ID:", error);
-    return null;
-  }
-};
+    
+     return null;
+   }
+   };
+
 export const getByCategory = async (category) => {
   try {
     let queryRef;

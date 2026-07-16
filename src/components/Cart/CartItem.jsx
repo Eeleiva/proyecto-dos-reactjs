@@ -5,8 +5,7 @@ import {Item} from "../Item/Item";
 
 
 export const CartItem = ({item}) => {
-
-    const {removeItem} = useCart();
+   const {removeItem} = useCart();
 
     return ( 
         <Item { ...item}> 

@@ -3,12 +3,13 @@ import {useState} from "react";
 import { useEffect } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import {useParams} from "react-router-dom";
-
+import { getByCategory, getProducts } from "../../services/productsService";
 
 export  const ItemListContainer = () => {
 
 
       const {category} = useParams();
+
       const [products, setProducts] = useState([]);
       const [loading, setLoading] = useState(true); 
 
@@ -17,9 +18,8 @@ export  const ItemListContainer = () => {
     setLoading(true);
 
 
-fetch("/data/products.json")
-.then((res) => res.json)
-.then((data) => setProducts(data))
+getByCategory(category)
+.then ((data) => setProducts(data))
 .catch((error) => console.log("hay un error:", error))
 .finally(() =>  setLoading(false));
      
