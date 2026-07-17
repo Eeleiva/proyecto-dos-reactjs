@@ -1,15 +1,14 @@
 
-import {useState} from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import { ItemList } from "../ItemList/ItemList";
-import {useParams} from "react-router-dom";
-import { getByCategory, getProducts } from "../../services/productsService";
+
+import { getProducts } from "../../services/productsService";
 
 export  const ItemListContainer = () => {
 
 
-      const {category} = useParams();
-
+      
       const [products, setProducts] = useState([]);
       const [loading, setLoading] = useState(true); 
 
@@ -17,15 +16,15 @@ export  const ItemListContainer = () => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
 
+    getProducts()
+    .then((data) => setProducts(data))
+    .catch((error) => console.log("hay un error",error))
+    .finally(() => setLoading(false));
+    }, []);
 
-getByCategory(category)
-.then ((data) => setProducts(data))
-.catch((error) => console.log("hay un error:", error))
-.finally(() =>  setLoading(false));
-     
-}, [category]);
+    if (loading) return <p> Cargando...</p>;
 
-if (loading) return <p>Cargando...</p>;
+
 
 return (
     <section>

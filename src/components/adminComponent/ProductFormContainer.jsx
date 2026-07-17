@@ -57,9 +57,11 @@ try {
     image: imageUrl, 
 };
 
+
+
 const id= await createProduct(productData);
 
-setProduct ({ name: "", price: "", category: "", description: ""});
+setProduct ({ name: "", price: "", category: "", description: "" });
 setFile(null);
 navigate(`/success/${id}`, {replace: true});
 } catch (error) { 

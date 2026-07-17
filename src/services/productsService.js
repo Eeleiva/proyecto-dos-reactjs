@@ -3,9 +3,7 @@ import {
   addDoc,
   getDocs,
   getDoc,
-  doc,
-  query,
-  where,
+  doc
 
 } from "firebase/firestore";
 
@@ -41,7 +39,7 @@ export const getProductById = async (id) => {
    
     if (snapshot.exists()) {
       const product = { id: snapshot.id, ...snapshot.data() }; 
-      console.log("Doc:" , product);
+  
       
       return product;
     } else {
@@ -53,30 +51,6 @@ export const getProductById = async (id) => {
      return null;
    }
    };
-
-export const getByCategory = async (category) => {
-  try {
-    let queryRef;
-
-    //truthy
-    if (category) {
-      queryRef = query(productsRef, where("category", "==", category));
-    } else {
-      queryRef = productsRef;
-    }
-
-    const snapshot = await getDocs(queryRef);
-
-    const productsFormat = snapshot.docs.map((doc) => {
-      return { id: doc.id, ...doc.data() };
-    });
-
-    return productsFormat;
-  } catch (error) {
-    console.error("Error al traer productos por categoría:", error);
-    return [];
-  }
-};
 
 export const createProduct = async (productData) => {
   try {
