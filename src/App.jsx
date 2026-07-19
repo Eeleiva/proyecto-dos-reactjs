@@ -1,9 +1,9 @@
 
 import { Routes, Route } from 'react-router-dom'
 import './App.css';
-//import { Count} from "./components/Count/Count";
-import { Footer} from "./components/Footer/Footer";
-import { Header} from "./components/Header/Header";
+//*import { Count } from "./components/Count/Count";//
+import { Footer } from "./components/Footer/Footer";
+import { Header } from "./components/Header/Header";
 
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
